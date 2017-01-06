@@ -1,0 +1,24 @@
+<div class="container">
+<%= form_for(@privileges) do |f| %>
+	<h2 style="color: green;">Añadir un tipo de Usuario</h2>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Tipo de Usuario</th>
+				<th>Permitir la creacion de Usuarios</th>
+				<th>Permitir ingreso de Derechos de Petición</th>
+				<th>Permitir contestar Derechos de Petición</th>
+			</tr>
+		</thead>
+		<tr>
+			<th><%= f.text_field :titulo, placeholder: "Tipo de Usuario" %></th>
+			<th><%= f.check_box :crearUsuario %></th>
+			<th><%= f.check_box :crearPeticion %></th>
+			<th><%= f.check_box :crearRespuesta %></th>
+		</tr>
+	</table>
+	<%= f.submit "Guardar", class:"btn btn-success" %>
+	<%= link_to '<button class ="btn btn-warning">Regresar</button>'.html_safe, privilege_path('index') %>
+<%end%>
+
+</div>
