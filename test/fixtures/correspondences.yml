@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  category_id: 
+  titulo: MyString
+  descripcion: MyText
+  inicio: 2017-01-14
+  fin: 2017-01-14
+  estado: false
+
+two:
+  user_id: 
+  category_id: 
+  titulo: MyString
+  descripcion: MyText
+  inicio: 2017-01-14
+  fin: 2017-01-14
+  estado: false

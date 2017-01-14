@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @correspondence.user %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @correspondence.category %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @correspondence.titulo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @correspondence.descripcion %>
+</p>
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @correspondence.inicio %>
+</p>
+
+<p>
+  <strong>Fin:</strong>
+  <%= @correspondence.fin %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @correspondence.estado %>
+</p>
+
+<%= link_to 'Edit', edit_correspondence_path(@correspondence) %> |
+<%= link_to 'Back', correspondences_path %>

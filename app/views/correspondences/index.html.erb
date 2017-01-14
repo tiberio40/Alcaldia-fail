@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Correspondences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Category</th>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th>Inicio</th>
+      <th>Fin</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @correspondences.each do |correspondence| %>
+      <tr>
+        <td><%= correspondence.user %></td>
+        <td><%= correspondence.category %></td>
+        <td><%= correspondence.titulo %></td>
+        <td><%= correspondence.descripcion %></td>
+        <td><%= correspondence.inicio %></td>
+        <td><%= correspondence.fin %></td>
+        <td><%= correspondence.estado %></td>
+        <td><%= link_to 'Show', correspondence %></td>
+        <td><%= link_to 'Edit', edit_correspondence_path(correspondence) %></td>
+        <td><%= link_to 'Destroy', correspondence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Correspondence', new_correspondence_path %>

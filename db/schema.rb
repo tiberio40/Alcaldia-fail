@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114181533) do
+ActiveRecord::Schema.define(version: 20170114220814) do
 
   create_table "categories", force: :cascade do |t|
     t.text     "descripcion", limit: 65535
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 20170114181533) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "correspondences", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.integer  "category_id", limit: 4
+    t.string   "titulo",      limit: 255
+    t.text     "descripcion", limit: 65535
+    t.date     "inicio"
+    t.date     "fin"
+    t.boolean  "estado"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "correspondences", ["category_id"], name: "index_correspondences_on_category_id", using: :btree
+  add_index "correspondences", ["user_id"], name: "index_correspondences_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -40,4 +55,6 @@ ActiveRecord::Schema.define(version: 20170114181533) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "correspondences", "categories"
+  add_foreign_key "correspondences", "users"
 end
