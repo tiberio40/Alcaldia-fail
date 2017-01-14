@@ -29,15 +29,7 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<% if user_signed_in? %>
-					<li>
-						<%= link_to "Cerrar Sessión", destroy_user_session_path, method: :delente%>
-					</li>
-				<% else %>
-					<li>
-						<%= link_to "Iniciar Sessión", new_user_session_path, method: :delente%>
-					</li>
-				<% end %>
+				<a href="#">Iniciar Sesion</a>
 				
 			</ul>
 		</div>
