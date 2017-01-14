@@ -1,0 +1,30 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Categorias</h1>
+
+<table class="table">
+  <thead>
+    <tr class="info">
+      <th>Descripción</th>
+      <th>Numero de Dias</th>
+      <th colspan="3">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.descripcion %></td>
+        <td><%= category.dia %></td>
+        <td><%= link_to 'Mostrar', category %></td>
+        <td><%= link_to 'Editar', edit_category_path(category) %></td>
+        <td><%= link_to 'Eliminar', category, method: :delete, data: { confirm: '¿Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Categoria', new_category_path %>
